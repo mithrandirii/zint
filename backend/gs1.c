@@ -150,7 +150,7 @@ int gs1_verify(struct zint_symbol *symbol, uint8_t source[], const unsigned int 
 		data_length[i] = 0;
 		do {
 			data_length[i]++;
-		} while ((source[data_location[i] + data_length[i] - 1] != '[') && (source[data_location[i] + data_length[i] - 1] != '\0'));
+		} while ((source[data_location[i] + data_length[i] - 1] != '[') && (data_location[i] + data_length[i] <= src_len));
 		data_length[i]--;
 	}
 
