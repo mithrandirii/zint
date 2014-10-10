@@ -962,7 +962,7 @@ int nve_18(struct zint_symbol *symbol, uint8_t source[], int length)
 	for(int i = sourcelen - 1; i >= 0; i--) {
 		total_sum += ctoi(source[i]);
 
-		if(!(i & 1)) {
+		if(!((length - 1 - i) & 1)) {
 			total_sum += 2 * ctoi(source[i]);
 		}
 	}
